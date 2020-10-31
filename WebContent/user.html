@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>File Converter</title>
+<style>
+h1 {
+	font-family: Arial;
+	color: black;
+	margin: 25px;
+	text-align: center;
+}
+
+table {
+	border-style: solid;
+	border-color: hsla(89, 43%, 51%, 0.3);
+}
+
+table, th, td {
+	text-align: center;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#submit {
+	width: 20em;
+	height: 2em;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	weight: bold;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+textarea {
+	font-family: Arial;
+	color: #009900;
+	margin: 25px;
+}
+</style>
+</head>
+
+<body>
+	<h1>File Converter:</h1>
+	<br>
+
+
+	<form method="GET" action="homeServlet" enctype='multipart/form-data'>
+		<table class="center" border="5">
+			<tr>
+				<td><br>
+				<br>Select the text file to be converted:<br>
+				<br></td>
+				<td><input type="file" name="file" id="file"></td>
+			</tr>
+
+			<tr>
+				<td><br>
+				<br>Enter the location to save the converted Excel file:<br>
+				<br></td>
+				<td><input type="text" name="outputfile" id="outputfile"
+					size="30"></td>
+			</tr>
+			<tr>
+				<td>Text Values:</td>
+				<td><textarea id="TextValue" name="TextValue" id="TextValue"
+						style="width: 300px; height: 10pc; overflow-y: scroll;">
+		</textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2"><button type="submit" class="button"
+						value="Submit" id="submit" name="submitButton">Submit</button></td>
+			</tr>
+
+
+		</table>
+	</form>
+
+	<script type="text/javascript">
+		var x;
+		document.getElementById('file').addEventListener('change', function() {
+
+			var fr = new FileReader();
+			fr.onload = function() {
+				x = fr.result;
+				document.getElementById('TextValue').textContent = fr.result
+			}
+
+			fr.readAsText(this.files[0]);
+		})
+	</script>
+</body>
+</html>

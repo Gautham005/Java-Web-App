@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+
+<style>
+h2 {
+	font-family: Arial;
+	color: black;
+	margin: 25px;
+	text-align: center;
+}
+
+table {
+	border-style: solid;
+	border-color: hsla(89, 43%, 51%, 0.3);
+}
+
+table, th, td {
+	text-align: center;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#submit {
+	width: 20em;
+	height: 2em;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	weight: bold;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<h2>Login:</h2>
+	<form method="post" action="loginServlet">
+		<table border="1" class="center">
+			<tr>
+				<td><p>Email:</p></td>
+				<td><input type="text" name="userName"></td>
+			</tr>
+			<tr>
+				<td><p>Password:</p></td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" id="submit" class="button"
+					name="submit" value="Login"></td>
+			</tr>
+
+		</table>
+	</form>
+</body>
+</html>
